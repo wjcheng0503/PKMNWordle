@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "IyORxjEAQFaIieP6q2fPKCyUuo5gNqYU1H72nqrUtDg=",
+  "Source": "PokemonWordle-BackEnd",
+  "BasePath": "_content/PokemonWordle-BackEnd",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
