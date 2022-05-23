@@ -2,6 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.Add(new ServiceDescriptor(typeof(PokemonWordle_BackEnd.Models.PokemonDBContext), new PokemonWordle_BackEnd.Models.PokemonDBContext(builder.Configuration.GetConnectionString("PokemonDBConnection"))));
+builder.Services.Add(new ServiceDescriptor(typeof(PokemonWordle_BackEnd.Models.PlayerDBContext), new PokemonWordle_BackEnd.Models.PlayerDBContext(builder.Configuration.GetConnectionString("PlayerDBConnection"))));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

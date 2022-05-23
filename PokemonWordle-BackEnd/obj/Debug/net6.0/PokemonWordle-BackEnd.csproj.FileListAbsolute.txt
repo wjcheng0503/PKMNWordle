@@ -98,3 +98,4 @@ C:\Users\wenra\Desktop\PersonalThings\Docs\CSS533\PokemonWordle\PokemonWordle-Ba
 C:\Users\wenra\Desktop\PersonalThings\Docs\CSS533\PokemonWordle\PokemonWordle-BackEnd\obj\Debug\net6.0\PokemonWordle-BackEnd.pdb
 C:\Users\wenra\Desktop\PersonalThings\Docs\CSS533\PokemonWordle\PokemonWordle-BackEnd\obj\Debug\net6.0\PokemonWordle-BackEnd.genruntimeconfig.cache
 C:\Users\wenra\Desktop\PersonalThings\Docs\CSS533\PokemonWordle\PokemonWordle-BackEnd\obj\Debug\net6.0\ref\PokemonWordle-BackEnd.dll
+C:\Users\wenra\Desktop\PersonalThings\Docs\CSS533\PokemonWordle\PokemonWordle-BackEnd\bin\Debug\net6.0\Newtonsoft.Json.dll

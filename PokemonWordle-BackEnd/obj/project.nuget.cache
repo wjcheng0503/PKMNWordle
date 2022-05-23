@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Wh/G8ncuI1RY6pSixxAVS4Wsdyz0J6dUhqv1ZJG3lHt/IbHrf8BvfOiKyodOrXHmXhL8/ICuAbbwfirGluHcLQ==",
+  "dgSpecHash": "JXjVNTmzjGQbx6JvMequuXJ3d2vDvfmXJtR6Hy/XL2GImUr+yUBw43OqOh9EymAXqg0o/q/wBH0gud6pquh0Gg==",
   "success": true,
   "projectFilePath": "C:\\Users\\wenra\\Desktop\\PersonalThings\\Docs\\CSS533\\PokemonWordle\\PokemonWordle-BackEnd\\PokemonWordle-BackEnd.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\wenra\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\wenra\\.nuget\\packages\\mysql.data\\8.0.29\\mysql.data.8.0.29.nupkg.sha512",
     "C:\\Users\\wenra\\.nuget\\packages\\mysql.entityframeworkcore\\6.0.1\\mysql.entityframeworkcore.6.0.1.nupkg.sha512",
+    "C:\\Users\\wenra\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\wenra\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\wenra\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\wenra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
