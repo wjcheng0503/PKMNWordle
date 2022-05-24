@@ -21,11 +21,8 @@ namespace PokemonWordle_BackEnd.Controllers
         [HttpGet]
         public GameLogic GetPokemon()
         {
-            // connect to PokemonDB,
-            // reset the state of the table,
-            // and set one of the pokemons in the table as the answer (via isAnswer column)
+            // connect to PokemonDB and retrieve a random pokemon
             PokemonDBContext pokemonContext = HttpContext.RequestServices.GetService(typeof(PokemonDBContext)) as PokemonDBContext;
-            pokemonContext.resetSelectedPokemon();
             Pokemon pokemon = pokemonContext.GetRandomPokemon();
 
             GameLogic gL = new GameLogic
@@ -38,17 +35,18 @@ namespace PokemonWordle_BackEnd.Controllers
                     pokemon.Classification }
             };
 
+            Debug.WriteLine(pokemon.Name);
+
             return gL;
         }
 
         [HttpGet("pokemon={pokemon}")]
-        public GuessResult CheckAnswer([FromRoute] string pokemon)
+        public GuessResult CheckValidAnswer([FromRoute] string pokemon)
         {
             // get information from PokemonDB
             PokemonDBContext pokemonContext = HttpContext.RequestServices.GetService(typeof(PokemonDBContext)) as PokemonDBContext;
             bool isValid = pokemonContext.isValid(pokemon);
-            bool isCorrect = isValid ? pokemonContext.isCorrect(pokemon) : false;
-            GuessResult gr = new GuessResult { isCorrect = isCorrect , isValid = isValid};
+            GuessResult gr = new GuessResult { isValid = isValid};
             return gr;
         }
 

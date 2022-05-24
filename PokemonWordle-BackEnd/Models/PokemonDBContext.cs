@@ -67,9 +67,6 @@ namespace PokemonWordle_BackEnd.Models
                         };
                     }
                 }
-
-                cmd = new MySqlCommand($"update pokemon set isAnswer=1 where name='{pokemon.Name}';", conn);
-                cmd.ExecuteReader();
             }
 
             return pokemon;
@@ -94,43 +91,6 @@ namespace PokemonWordle_BackEnd.Models
                 }
             }
             return isValid;
-        }
-
-        internal bool isCorrect(string pokemon)
-        {
-            // check if the pokemon is the answer for the current round
-            bool isCorrect = false;
-            using (MySqlConnection conn = GetConnection())
-            {
-                conn.Open();
-                // converts specific characters for sql query
-                // example: the single quote in "Farfetch'd"
-                pokemon = pokemon.Replace("'", "''");
-
-                // find the pokemon based on the input, and check its isAnswer column
-                MySqlCommand cmd = new MySqlCommand($"select isAnswer from pokemon where name='{pokemon}';", conn);
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        // check if isAnswer is true, and return that value.
-                        isCorrect = Convert.ToInt32(reader["isAnswer"]) == 1;
-                    }
-                }
-            }
-            return isCorrect;
-        }
-
-        internal void resetSelectedPokemon()
-        {
-            // resets the isAnswer column for all pokemon to false
-            using (MySqlConnection conn = GetConnection())
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("update pokemon set isAnswer=false;", conn);
-                cmd.ExecuteReader();
-            }
         }
     }
 }
