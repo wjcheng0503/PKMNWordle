@@ -7,6 +7,7 @@ namespace PokemonWordle_BackEnd.Models
 {
     public class PokemonDBContext
     {
+        //Methods and properties used for connecting to the database.
         public string ConnectionString { get; set; }
 
         public PokemonDBContext (string connectionString)
@@ -20,6 +21,7 @@ namespace PokemonWordle_BackEnd.Models
             return conn;
         }
 
+        // recontextualizes the 'generation' column from the database into a named region
         public string GetRegion(int generation)
         {
             switch (generation)
@@ -43,9 +45,10 @@ namespace PokemonWordle_BackEnd.Models
             }
         }
 
+        // retrieves a random pokemon from the database 
         public Pokemon GetRandomPokemon()
         {
-
+            // initialize a pokemon instance;
             Pokemon pokemon = null;
             using (MySqlConnection conn = GetConnection())
             {
@@ -65,6 +68,7 @@ namespace PokemonWordle_BackEnd.Models
                             Region = GetRegion(Convert.ToInt32(reader["generation"])),
                             Classification = reader["classification"].ToString()
                         };
+                        break;
                     }
                 }
             }
@@ -72,9 +76,12 @@ namespace PokemonWordle_BackEnd.Models
             return pokemon;
         }
 
+        /* 
+         * checks if the input is a Pokemon name
+         * a name that does not exist within the database is not valid.
+        */
         internal bool isValid(string pokemon)
         {
-            // check if the input is a pokemon name
             bool isValid = false;
             using (MySqlConnection conn = GetConnection())
             {

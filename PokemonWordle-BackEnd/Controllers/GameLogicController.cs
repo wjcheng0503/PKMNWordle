@@ -18,6 +18,9 @@ namespace PokemonWordle_BackEnd.Controllers
             _logger = logger;
         }
 
+        // Retrieves a pokemon instance from the database context,
+        // reorganize its information into a GameLogic object,
+        // and return that information as JSON to the front-end.
         [HttpGet]
         public GameLogic GetPokemon()
         {
@@ -25,6 +28,8 @@ namespace PokemonWordle_BackEnd.Controllers
             PokemonDBContext pokemonContext = HttpContext.RequestServices.GetService(typeof(PokemonDBContext)) as PokemonDBContext;
             Pokemon pokemon = pokemonContext.GetRandomPokemon();
 
+            // create a GameLogic object with reorganized information
+            // from the Pokemon instance.
             GameLogic gL = new GameLogic
             {
                 CorrectAnswer = pokemon.Name,
@@ -40,16 +45,19 @@ namespace PokemonWordle_BackEnd.Controllers
             return gL;
         }
 
+        // Verify the received input through the database context
         [HttpGet("pokemon={pokemon}")]
         public GuessResult CheckValidAnswer([FromRoute] string pokemon)
         {
-            // get information from PokemonDB
             PokemonDBContext pokemonContext = HttpContext.RequestServices.GetService(typeof(PokemonDBContext)) as PokemonDBContext;
             bool isValid = pokemonContext.isValid(pokemon);
-            GuessResult gr = new GuessResult { isValid = isValid};
-            return gr;
+            GuessResult guessResult = new GuessResult { isValid = isValid };
+
+            return guessResult;
         }
 
+        // retrieve player information whenever
+        // the site is accessed (where possible)
         [HttpGet("player={playerID}")]
         public Player GetPlayer([FromRoute] string playerID)
         {
